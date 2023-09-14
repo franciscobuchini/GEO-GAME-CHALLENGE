@@ -1,0 +1,275 @@
+:root {
+    --primaryGreen: #98db7c;
+    --secondaryGreen: #77cc7d;
+    --primaryBlue: #008cdf;
+    --secondaryBlue: #0069d0;
+    --black: #303030;
+    --red: #D84527;
+    --orange: #D89227;
+    --white: #fafafa;
+    --shadow: 0px 0px 5px #0000001a;
+
+}
+
+* {
+    font-family: 'Josefin Sans';
+    margin: 0;
+    padding: 0;
+    color: var(--black);
+}
+
+body {
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    /*Alinear todo al centro*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+
+.startButton {
+    appearance: none;
+    font-family: Arial;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 4em;
+    width: 4em;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px var(--primaryGreen) inset;
+    border-radius: 50px;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.startButton:hover {
+    cursor: pointer;
+    outline: 5px solid var(--secondaryGreen);
+}
+
+.GameBoard .CountryImage {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.GameBoard .CountryImage img {
+    height: 22em;
+    width: 22em;
+    filter: drop-shadow(0px 0px 20px #ffffff);
+}
+
+.GameBoard .WhichCountryIs {
+    margin: 2em;
+    text-align: center;
+}
+
+.GameBoard .OptionButtons {
+    appearance: none;
+    background-color: var(--white);
+    padding: 1em;
+    margin: 1em;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.GameBoard .OptionButtons:hover {
+    color: var(--secondaryBlue);
+    cursor: pointer;
+    outline: 4px solid var(--secondaryBlue);
+}
+
+.topPanel {
+    position: absolute;
+    top: 5em;
+    left: 5em;
+    z-index: 1;
+}
+
+.topPanel .clock {
+    height: 8em;
+    width: 8em;
+    background-color: #ffffff;
+    outline: 5px solid var(--orange);
+    box-shadow: 0px 0px 20px var(--orange) inset;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topPanel .clock .timer {
+    font-family: Arial;
+    font-size: 5rem;
+}
+
+.topPanel .NOQBox {
+    height: 4em;
+    width: 8em;
+    margin-top: 2em;
+    background-color: #ffffff;
+    outline: 5px solid var(--orange);
+    box-shadow: 0px 0px 20px var(--orange) inset;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topPanel .NOQBox .NOQ {
+    font-family: Arial;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.topPanel .pointsBox {
+    height: 4em;
+    width: 8em;
+    margin-top: 2em;
+    background-color: #ffffff;
+    outline: 5px solid var(--orange);
+    box-shadow: 0px 0px 20px var(--orange) inset;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topPanel .pointsBox .points {
+    font-family: Arial;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.emergentContent {
+    z-index: 1;
+}
+
+.emergentScreen {
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100svh;
+    width: 100svw;
+    backdrop-filter: blur(0px);
+}
+
+.emergentText {
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Rubik Bubbles';
+    font-size: 17vw;
+    filter: drop-shadow(0px 0px 5px #000000);
+}
+
+.emergentTextBad {
+    color: var(--red);
+    -webkit-text-stroke: 4px var(--orange);
+}
+
+.emergentTextGood {
+    color: var(--secondaryGreen);
+    -webkit-text-stroke: 4px var(--primaryGreen);
+}
+
+.nextButton {
+    z-index: 100;
+    appearance: none;
+    font-family: Arial;
+    position: fixed;
+    top: 90%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    height: 4em;
+    width: 4em;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px var(--primaryGreen) inset;
+    border-radius: 50px;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.nextButton:hover {
+    cursor: pointer;
+    outline: 5px solid var(--secondaryGreen);
+}
+
+.pointsText {
+    text-align: center;
+    font-size: 4em;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 600px) {
+    .GameBoard .CountryImage {
+        margin-top: 5em;
+    }
+
+    .topPanel {
+        display: inline-flex;
+        justify-content: space-between;
+        height: 5em;
+        top: 0;
+        left: auto;
+        right: auto;
+        background-color: #ffffff;
+        outline: 5px solid var(--orange);
+        box-shadow: 0px 0px 20px var(--orange) inset;
+        border-radius: 0 0 40px 40px;
+    }
+
+    .topPanel .clock {
+        display: inline-flex;
+        padding: 2em 0 0 0;
+        background-color: #ffffff00;
+        outline: none;
+        box-shadow: none;
+        height: 1em;
+    }
+
+    .topPanel .clock .timer {
+        font-size: 2.2rem;
+        font-weight: 600;
+    }
+
+    .topPanel .NOQBox {
+        display: inline-flex;
+        background-color: #ffffff00;
+        outline: none;
+        box-shadow: none;
+        height: 1em;
+    }
+
+    .topPanel .pointsBox {
+        display: inline-flex;
+        padding: 0 1em 0 1em;
+        background-color: #ffffff00;
+        outline: none;
+        box-shadow: none;
+        height: 1em;
+    }
+
+    .emergentTextBad {
+        -webkit-text-stroke: 1px var(--orange);
+    }
+
+    .emergentTextGood {
+        -webkit-text-stroke: 1px var(--primaryGreen);
+    }
+}
